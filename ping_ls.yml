@@ -1,0 +1,13 @@
+- name ping ls
+  hosts: all
+  remote_user: ajeeb
+  tasks:
+  - name: test connection
+    ping:
+  - name: create venv
+    command: ls
+    register: myoutput
+  - set_fact:
+      myoutput={{ myoutput.stdout }}
+  - debug: var=myoutput
+    run_once: true
