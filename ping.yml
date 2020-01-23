@@ -1,5 +1,12 @@
-- name: Hello World Sample
+- name: Ping and List
   hosts: all
   tasks:
     - name: Hello Message
       ping:
+    - name: list
+      command: ls
+      register: myoutput
+    - set_fact:
+        myoutput={{ myoutput.stdout }}
+    - debug: var=myoutput
+      run_once: true
