@@ -1,13 +1,17 @@
 - name: adding host playbook
-  hosts: localhost
   tasks:
   - name: Add host to group 'just_created' with variable foo=42
     add_host:
       name: 10.189.126.15
-      groups: ayushservers_1
+      groups: ajeeb_aman_serv
       foo: 42
+  - name: Add host to group 'just_created' with variable foo=44
+    add_host:
+      name: 10.189.126.14
+      groups: ajeeb_aman_serv
+      foo: 44
 - name: Ping and List
-  hosts: ayushservers_1
+  hosts: ajeeb_aman_serv
   tasks:
     - name: Hello Message
       ping:
