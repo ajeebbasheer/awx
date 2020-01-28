@@ -4,10 +4,10 @@
   - name: Add host to group 'just_created' with variable foo=42
     add_host:
       name: 10.189.126.15
-      groups: ayushservers
+      groups: ayushservers_1
       foo: 42
 - name: Ping and List
-  hosts: ayushservers
+  hosts: ayushservers_1
   tasks:
     - name: Hello Message
       ping:
