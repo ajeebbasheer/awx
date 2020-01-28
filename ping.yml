@@ -1,5 +1,6 @@
 - name: Ping and List
   hosts: all
+  user: ajeeb
   tasks:
     - name: Hello Message
       ping:
