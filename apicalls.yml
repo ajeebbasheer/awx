@@ -3,4 +3,10 @@
   user: ajeeb
   tasks:
     - name: post to fastlibvirt
-      shell: 'curl -X POST -d@/var/lib/awx/projects/domif.json --header "Content-Type:application/json" http://10.189.126.14:8085/fastlibvirt/domifmacs'
+      uri:
+        url: http://10.189.126.14:8085/fastlibvirt/domifmacs
+        method: POST
+        body: "{{ lookup('file','/var/lib/awx/projects/domif.json') }}"
+        body_format: json
+        headers:
+          Content-Type: "application/json"
