@@ -4,7 +4,7 @@
   tasks:
     - name: post to fastlibvirt
       uri:
-        url: http://10.189.126.14:8085/fastlibvirt/domifmacs
+        url: http://10.189.126.14:8085/fastlibvirt/pausedomain
         method: POST
         body: "{{ lookup('file','/var/lib/awx/projects/domif.json') }}"
         body_format: json
