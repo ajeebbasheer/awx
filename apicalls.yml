@@ -10,8 +10,5 @@
         body_format: json
         headers:
           Content-Type: "application/json"
-        register: myoutput
-    - set_fact:
-        myoutput={{ myoutput.stdout }}
-    - debug: var=myoutput
-      run_once: true
+        status_code: 200
+      register: login
