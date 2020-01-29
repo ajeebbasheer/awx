@@ -1,0 +1,6 @@
+- name: Exec POST
+  hosts: all
+  user: ajeeb
+  tasks:
+    - name: post to fastlibvirt
+      shell: 'curl -X POST -d@ --header "Content-Type:application/json" http://10.189.126.14:8085/fastlibvirt/domifmacs'
