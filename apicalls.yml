@@ -6,7 +6,7 @@
       uri:
         url: http://10.189.126.14:8085/fastlibvirt/domifmacs
         method: POST
-        body: "{{ lookup('file','/var/lib/awx/projects/domif.json') }}"
+        body: "{{ lookup('file','/home/ajeeb/domif.json') }}"
         body_format: json
         headers:
           Content-Type: "application/json"
