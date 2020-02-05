@@ -1,5 +1,5 @@
 - name: Ping and List
-  hosts: "{{ variable_host | default('all') }}"
+  hosts: "{{ variable_host | default('172.28.12.169') }}"
   user: ajeeb
   tasks:
     - name: Hello Message
