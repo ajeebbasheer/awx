@@ -1,4 +1,12 @@
---- # Favorite movies
- - Casablanca
- - North by Northwest
- - The Man Who Wasn't There
+- name: Ping and List
+  hosts: "{{ variable_host | default('all') }}"
+  tasks:
+    - name: Hello Message
+      ping:
+    - name: list
+      command: ls
+      register: myoutput
+    - set_fact:
+        myoutput={{ myoutput.stdout }}
+    - debug: var=myoutput
+      run_once: true
