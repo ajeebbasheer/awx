@@ -1,4 +1,15 @@
---- # Favorite movies
- - Casablanca
- - North by Northwest
- - The Man Who Wasn't There
+  
+- name: Exec POST
+  hosts: all
+  user: ajeeb
+  tasks:
+    - name: post to fastlibvirt
+      uri:
+        url: http://10.189.126.14:8085/fastlibvirt/domifmacs
+        method: POST
+        body: "{{ lookup('file','/var/lib/awx/projects/domif.json') }}"
+        body_format: json
+        headers:
+          Content-Type: "application/json"
+        status_code: 200
+      register: login
