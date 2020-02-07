@@ -1,6 +1,12 @@
-- name: Hello World Sample
-  hosts: all
+- name: Ping and List
+  hosts: "{{ variable_host | default('all') }}"
   tasks:
-    - name: Hello Message
-      debug:
-        msg: "Hello World2!"
+    - name: Ping
+      ping:
+    - name: list
+      command: ls
+      register: myoutput
+    - set_fact:
+        myoutput={{ myoutput.stdout }}
+    - debug: var=myoutput
+      run_once: true
