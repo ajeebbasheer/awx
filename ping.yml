@@ -3,10 +3,10 @@
   tasks:
     - name: Ping
       ping:
-#    - name: list
-#      command: ls
-#      register: myoutput
-#    - set_fact:
-#        myoutput={{ myoutput.stdout }}
-#    - debug: var=myoutput
-#      run_once: true
+    - name: list
+      command: ls
+      register: myoutput
+    - set_fact:
+        myoutput={{ myoutput.stdout }}
+    - debug: var=myoutput
+      run_once: true
