@@ -16,4 +16,4 @@
     - set_fact:
         myoutput={{ myoutput.stdout_lines }}
     - debug: var=myoutput
-	  run_once: true
+      run_once: true
