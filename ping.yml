@@ -5,14 +5,14 @@
       ping:
     - name: list
       command: ls
-	- name: check storage CentOS
-	  command: free
-	  when: ansible_facts['distribution'] == "CentOS"
-	  register: myoutput
-	- name: check storage FreeBSD
-	  command: swapinfo
-	  when: ansible_facts['distribution'] == "FreeBSD"
-	  register: myoutput
+    - name: check storage CentOS
+      command: free
+      when: ansible_facts['distribution'] == "CentOS"
+      register: myoutput
+    - name: check storage FreeBSD
+      command: swapinfo
+      when: ansible_facts['distribution'] == "FreeBSD"
+      register: myoutput
     - set_fact:
         myoutput={{ myoutput.stdout }}
     - debug: var=myoutput
