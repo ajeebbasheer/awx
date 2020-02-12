@@ -14,5 +14,6 @@
       when: ansible_facts['distribution'] == "FreeBSD"
       register: myoutput
     - set_fact:
-        myoutput={{ myoutput.stdout }}
+        myoutput={{ myoutput.stdout_lines }}
     - debug: var=myoutput
+	  run_once: true
