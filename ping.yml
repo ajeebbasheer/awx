@@ -8,11 +8,13 @@
     - name: check storage CentOS
       command: free
       when: ansible_facts['distribution'] == "CentOS"
-      register: myoutput
+      register: centosoutput
     - name: check storage FreeBSD
       command: swapinfo
       when: ansible_facts['distribution'] == "FreeBSD"
-      register: myoutput
+      register: bsdoutput
     - set_fact:
-        myoutput={{ myoutput }}
-    - debug: var=myoutput
+        bsdoutput={{ bsdoutput }}
+        centosoutput={{ centosoutput }}
+    - debug: var=centosoutput
+    - debug: var=bsdoutput
