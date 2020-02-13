@@ -9,9 +9,10 @@
       command: free
       when: ansible_facts['distribution'] == "CentOS"
       register: linuxoutput
-    - debug: var=linuxoutput.stdout_lines
+#    - debug: var=linuxoutput.stdout_lines
     - name: check storage FreeBSD
       command: swapinfo
       when: ansible_facts['distribution'] == "FreeBSD"
       register: bsdoutput
-    - debug: var=bsdoutput.stdout_lines
+    - debug: var=bsdoutput.stdout_lines if ansible_facts['distribution'] == "FreeBSD" else var=linuxoutput.stdout_lines
+#tr_result: "{{ '{\"status\": \"SUCCESS\"}' if (op_result['output'] == 'Deleted') else '{\"status\" : \"FAILED\"}' }}"
