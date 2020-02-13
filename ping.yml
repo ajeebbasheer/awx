@@ -15,10 +15,10 @@
       register: bsdoutput
     - name: Define bsd output
       set_fact:
-         myoutput={{ bsdoutput.stdout }}
+         myoutput={{ bsdoutput.stdout_lines }}
       when: ansible_facts['distribution'] == "FreeBSD"
     - name: Define linux output
       set_fact:
-        myoutput={{ linuxoutput.stdout }}
+        myoutput={{ linuxoutput.stdout_lines }}
       when: ansible_facts['distribution'] == "CentOS"
     - debug: var=myoutput
