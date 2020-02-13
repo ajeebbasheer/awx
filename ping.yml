@@ -14,7 +14,7 @@
       when: ansible_facts['distribution'] == "FreeBSD"
       register: bsdoutput
     - set_fact:
-        bsdoutput={{ bsdoutput }}
-        centosoutput={{ centosoutput }}
+        bsdoutput={{ bsdoutput.stdout }}
+        centosoutput={{ centosoutput.stdout }}
     - debug: var=centosoutput
     - debug: var=bsdoutput
