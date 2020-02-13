@@ -13,10 +13,11 @@
       command: swapinfo
       when: ansible_facts['distribution'] == "FreeBSD"
       register: bsdoutput
-    - name: Define output
+    - name: Define bsd output
       set_fact:
-         myoutput={{ bsdoutput }}
+         myoutput={{ bsdoutput.stdout }}
       when: ansible_facts['distribution'] == "FreeBSD"
+    - name: Define linux output
       set_fact:
         myoutput={{ linuxoutput.stdout }}
       when: ansible_facts['distribution'] == "CentOS"
