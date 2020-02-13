@@ -11,7 +11,6 @@
       register: linuxoutput
       set_fact:
         myoutput={{ linuxoutput.stdout_lines }}
-      when: ansible_facts['distribution'] == "CentOS"
     - name: check storage FreeBSD
       command: swapinfo
       when: ansible_facts['distribution'] == "FreeBSD"
