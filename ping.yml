@@ -14,9 +14,11 @@
       command: swapinfo
       when: ansible_facts['distribution'] == "FreeBSD"
       register: bsdoutput
-    - name: Set output for different servers 
-      set_fact: 
-         myoutput = "{{bsdoutput if (ansible_facts['distribution'] == 'FreeBSD') else linuxoutput}}"
-    - debug: var=myoutput 
+    - name: DEBUG output for Linux servers 
+      debug: var=bsdoutput.stdout_lines
+      when: ansible_facts['distribution'] == "CentOS"
+    - name: DEBUG output for BSD servers 
+      debug: var=linuxoutput.stdout_lines 
+      when: ansible_facts['distribution'] == "FreeBSD"
     #- debug: var=bsdoutput.stdout_lines if ansible_facts['distribution'] == "FreeBSD" else var=linuxoutput.stdout_lines
 #tr_result: "{{ '{\"status\": \"SUCCESS\"}' if (op_result['output'] == 'Deleted') else '{\"status\" : \"FAILED\"}' }}"
