@@ -16,7 +16,7 @@
     - name: DEBUG output for Linux servers 
       debug: var=linuxoutput.stdout_lines
       when: ansible_facts['distribution'] == "CentOS"
-    - name: DEBUG output for Linux servers 
+    - name: DEBUG output for BSD servers 
       debug: var=bsdoutput.stdout_lines
       when: ansible_facts['distribution'] == "FreeBSD"
 #    - name: DEBUG output for BSD servers 
