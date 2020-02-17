@@ -1,8 +1,8 @@
 - name: Get Device Facts
   hosts: 172.28.12.137
-  roles: Juniper.junos 
-  connection: local
-  gather_facts: no
+#   roles: Juniper.junos 
+#   connection: local
+#   gather_facts: no
 
   tasks:
     - name: Print version
