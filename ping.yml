@@ -5,11 +5,11 @@
       ping:
     - name: list
       command: ls
-    - name: check storage CentOS
+    - name: check Memory CentOS
       command: free
       when: ansible_facts['distribution'] == "CentOS"
       register: linuxoutput
-    - name: check storage FreeBSD
+    - name: check Memory FreeBSD
       command: swapinfo
       when: ansible_facts['distribution'] == "FreeBSD"
       register: bsdoutput
@@ -19,6 +19,9 @@
     - name: DEBUG output for BSD servers 
       debug: var=bsdoutput.stdout_lines
       when: ansible_facts['distribution'] == "FreeBSD"
-#    - name: DEBUG output for BSD servers 
- #     debug: "{{var=bsdoutput.stdout_lines  if (ansible_facts['distribution'] == "FreeBSD") else linuxoutput.stdout_lines }}"
-#tr_result: "{{ '{\"status\": \"SUCCESS\"}' if (op_result['output'] == 'Deleted') else '{\"status\" : \"FAILED\"}' }}"
+    - name: Juniper Commands
+      junos_command:
+        commands:
+          - show version
+          - show interfaces
+      when: ansible_facts['distribution'] == "Juniper"
