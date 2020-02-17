@@ -1,0 +1,5 @@
+- name: Get Device Facts
+  hosts: dc1
+  roles:
+    - Juniper.junos     
+  connection: local
