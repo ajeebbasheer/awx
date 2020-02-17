@@ -5,5 +5,8 @@
 
   tasks:
     - name: Print version
-      junos_commands:
+      junos_command:
          command: show version
+#         commands:
+#           - show version
+#           - show interfaces
