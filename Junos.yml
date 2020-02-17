@@ -2,10 +2,8 @@
   hosts: 172.28.12.137
   connection: local
   gather_facts: no
-  roles:
-    - Juniper.junos
 
   tasks:
     - name: Print version
       debug:
-        var: junos.version
+        var: show version
