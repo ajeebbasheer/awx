@@ -3,6 +3,8 @@
   roles:
     - Juniper.junos     
   connection: local
+  
+  tasks:
   - name: Juniper Commands
     junos_command:
       commands:
