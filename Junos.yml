@@ -1,5 +1,10 @@
 - name: Get Device Facts
-  hosts: dc1
+  hosts: 172.28.12.137
   roles:
     - Juniper.junos     
   connection: local
+  - name: Juniper Commands
+    junos_command:
+      commands:
+        - show version
+        - show interfaces
