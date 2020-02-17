@@ -5,5 +5,5 @@
 
   tasks:
     - name: Print version
-      debug:
-        var: show version
+      junos_commands:
+         command: show version
