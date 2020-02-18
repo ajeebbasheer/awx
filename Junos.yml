@@ -4,9 +4,13 @@
   gather_facts: no
 
   tasks:
-    - name: Print version
+#     - name: Print version
+#       junos_command:
+#          command: show version
+    - name: run commands and specify the output format
       junos_command:
-         command: show version
+        commands: show version
+        display: json
 #         commands:
 #           - show version
 #           - show interfaces
