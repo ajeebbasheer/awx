@@ -25,7 +25,7 @@
 
   tasks:
     - name: Execute single "show version" command.
-      juniper_junos_command:
+      junos_command:
         commands: "show version"
       register: response
 
