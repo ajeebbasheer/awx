@@ -3,17 +3,17 @@
 #   connection: local
 #   gather_facts: no
 
-#   tasks:
-# #     - name: Print version
-# #       junos_command:
-# #          command: show version
-#     - name: run commands and specify the output format
-#       junos_command:
-#         commands: show version
-#         display: json
-# #         commands:
-# #           - show version
-# #           - show interfaces
+  tasks:
+    - name: Print version
+      junos_command:
+         command: show version
+    - name: run commands and specify the output format
+      junos_command:
+        commands: show version
+        display: json
+        commands:
+          - show version
+          - show interfaces
 
 
 - name: Examples of juniper_junos_command
