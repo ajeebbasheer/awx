@@ -20,8 +20,6 @@
   hosts: 172.28.12.137
   connection: local
   gather_facts: no
-#   roles:
-#     - Juniper.junos
 
   tasks:
     - name: collect default set of facts
