@@ -35,7 +35,7 @@
       debug:
         var: response.stdout
 
-    - name: Execute single "show version" command.
+    - name: Execute single "show interfaces" command.
       junos_command:
         commands: "show interfaces"
       register: response
@@ -44,7 +44,7 @@
       debug:
         var: response.stdout
         
-    - name: Execute single "show version" command.
+    - name: Execute single "show interfaces terse ge-0/0/0" command.
       junos_command:
         commands: "show interfaces terse ge-0/0/0"
       register: response
